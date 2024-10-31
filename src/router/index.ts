@@ -1,14 +1,21 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import Home from '@/views/home/index.vue';
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from '@/views/home/myHome.vue'
+import Article from '@/views/article/myArticle.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
-      component: Home
-    }
+      component: Home,
+    },
+    {
+      path: '/article',
+      name: 'article',
+      component: Article,
+    },
+    { path: '/', redirect: '/home' },
     // {
     //   path: '/about',
     //   name: 'about',
@@ -17,7 +24,7 @@ const router = createRouter({
     //   // which is lazy-loaded when the route is visited.
     //   // component: () => import()
     // }
-  ]
+  ],
 })
 
 export default router
